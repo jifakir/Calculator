@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+}
+body {
+  max-width: 100vw;
+  max-height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(19, 88, 42);
+  font-family: "Orbitron", sans-serif;
+  user-select: none;
+  -webkib-touch-collout: none;
+}
+.calculator {
+  font-family: sans-serif;
+  text-align: center;
+  min-width: 300px;
+  max-width: 300px;
+  max-height: 500px;
+  border: 2px solid #01270b;
+  box-shadow: 0 3px 3px #01270b;
+  border-radius: 5px;
+  padding: 15px;
+  font-family: "Orbitron", sans-serif;
+}
+.pad-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 59px 59px 59px 59px;
+  grid-gap: 10px;
+  margin-top: 10px;
+}
+.pad-btn {
+  padding: 10px 15px;
+  text-align: center;
+  border: none;
+  color: #01270b;
+  background-color: rgb(19, 88, 42);
+  box-shadow: 1px 1px 3px#01270b;
+  border-radius: 5px;
+  border: 1px solid #01270b;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+}
+.pad-btn:active {
+  background-color: rgba(74, 97, 77, 0.856);
+  transition: all 0.1s ease-in-out;
+}
+.display {
+  background-color: rgb(19, 88, 42);
+  color: #01270b;
+  border-radius: 5px;
+  border: 1px solid #01270b;
+  margin-top: 10px;
+  box-shadow: 1px 1px 2px#01270b;
+  text-align: right;
+  font-size: 1rem;
+}
+.current {
+  padding: 10px;
+  min-height: 30px;
+}
+.total {
+  min-height: 30px;
+  padding: 10px;
+  padding-top: 0;
+  margin-top: 2px solid rgb(19, 88, 42);
+}
