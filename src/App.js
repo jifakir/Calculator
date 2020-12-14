@@ -9,6 +9,7 @@ export default function App() {
   const [currentValue, setCurrentValue] = useState(initValue);
   const [total, setTotal] = useState(initValue);
   const currentValueHanlder = (e) => {
+    const regEx = /([+-/x%])$/g;
     if (total !== "0") {
       setTotal(initValue);
     } else if (currentValue.length >= 20) {
@@ -16,9 +17,10 @@ export default function App() {
     }
     const value = e.target.value;
     const refineValue = currentValue.replace(/^[x+-/%0]/g, "");
-    const refinedValue = refineValue.match(/[+-/x%]{2}/g)
-      ? refineValue.slice(0, -1)
-      : refineValue;
+    const refinedValue =
+      value.match(/[+-/x%]/g) && refineValue.match(regEx)
+        ? refineValue.replace(regEx, "")
+        : refineValue;
     setCurrentValue(refinedValue.concat(value));
   };
   // Equation Handler
