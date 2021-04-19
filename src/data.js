@@ -76,7 +76,7 @@ export const padData = [
     value: "."
   },
   {
-    idName: "equal",
+    idName: "equals",
     value: "="
   }
 ];

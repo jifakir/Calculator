@@ -8,15 +8,18 @@ export default function App() {
   const initValue = "0";
   const [currentValue, setCurrentValue] = useState(initValue);
   const [total, setTotal] = useState(initValue);
+  // Number handler
   const currentValueHanlder = (e) => {
-    const regEx = /([+-/x%])$/g;
+    const regEx = /([+/x%.])$/g;
+    const minusReg = /[-]$/g;
     if (total !== "0") {
       setTotal(initValue);
-    } else if (currentValue.length >= 20) {
-      return alert("Sorry! You have exceded maximum character limit.");
-    }
+    } else if (currentValue.length > 21) {
+      return alert("MAX-exceed");
+    };
+
     const value = e.target.value;
-    const refineValue = currentValue.replace(/^[x+-/%0]/g, "");
+    const refineValue = currentValue.replace(/^[x+/%0]/g, "");
     const refinedValue =
       value.match(/[+-/x%]/g) && refineValue.match(regEx)
         ? refineValue.replace(regEx, "")
@@ -34,6 +37,7 @@ export default function App() {
     } else {
       result = refinedValue;
     }
+    
     console.log(result);
     const equal = eval(result);
     console.log(equal);
